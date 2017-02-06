@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: dzy-title
+# key: dt
+# --
+#+TITLE:$0
+#+AUTHOR: Jerry
