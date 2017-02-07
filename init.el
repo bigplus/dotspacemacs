@@ -327,7 +327,22 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;;--------------------------------------------------------------------------------
   (global-linum-mode t)
+  ;;--------------------------------------------------------------------------------
+  ;; http://vwood.github.io/emacs-images-in-buffer.html
+  (defun refresh-iimages ()
+    "Only way I've found to refresh iimages (without also recentering)"
+    (interactive)
+    (clear-image-cache nil)
+    (iimage-mode nil)
+    (iimage-mode t))
+
+  (add-to-list 'compilation-finish-functions
+               (lambda (buffer msg)
+                 (save-excursion
+                   (set-buffer buffer)
+                   (refresh-iimages))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
