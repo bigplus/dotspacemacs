@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: pymc-default-import
+# key: pmi
+# --
+import matplotlib
+import numpy as np
+import scipy.stats as stats
+import pymc3 as pm
+from IPython.core.pylabtools import figsize
+from matplotlib import pyplot as plt
+
+matplotlib.use('Agg')
+
+figsize(15, 10)
+

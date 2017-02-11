@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: pymc-show-image
+# key: ps
+# --
+plt.savefig('plotxx.png', dpi=60)
+print '<plotxx.png>'

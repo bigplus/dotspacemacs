@@ -33,19 +33,20 @@ values."
    '(
      markdown
      html
-     dzy-org
+     ;; dzy-org
+     dzy-personal-config
      search-engine
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     python
-     ;; (python :variables python-fill-column 99
-     ;;        python-sort-imports-on-save t
-     ;;        python-test-runner '(pytest nose)
-     ;;        python-enable-yapf-format-on-save t
-     ;;        python-shell-interpreter-args "--pylab")
+     ;; python
+     (python :variables python-fill-column 99
+             python-sort-imports-on-save t
+             python-test-runner '(pytest nose)
+             python-enable-yapf-format-on-save t
+             python-shell-interpreter-args "--pylab")
      ipython-notebook
      helm
      (auto-completion :variables
@@ -337,7 +338,6 @@ you should place your code here."
     (clear-image-cache nil)
     (iimage-mode nil)
     (iimage-mode t))
-
   (add-to-list 'compilation-finish-functions
                (lambda (buffer msg)
                  (save-excursion
@@ -355,7 +355,7 @@ you should place your code here."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (typo stickyfunc-enhance srefactor company-quickhelp ein websocket ibuffer-projectile parent-mode flx evil goto-chg diminish pkg-info epl packed f s avy popup flyspell-correct-ivy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck auto-dictionary org-projectile org-present org org-pomodoro alert log4e gntp org-download htmlize gnuplot mmm-mode markdown-toc markdown-mode gh-md xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help spinner hydra anzu iedit smartparens undo-tree projectile dash package-build yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic wgrep smex ivy-hydra counsel-projectile counsel swiper ivy helm-company helm-c-yasnippet company-web web-completion-data company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode spaceline open-junk-file neotree link-hint indent-guide google-translate eyebrowse evil-mc ace-link bind-map highlight helm helm-core bind-key ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme restart-emacs request rainbow-delimiters quelpa powerline popwin persp-mode pcre2el paradox org-plus-contrib org-bullets move-text macrostep lorem-ipsum linum-relative info+ ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile async aggressive-indent adaptive-wrap ace-window ace-jump-helm-line))))
+    (highlight-symbol col-highlight vline typo stickyfunc-enhance srefactor company-quickhelp ein websocket ibuffer-projectile parent-mode flx evil goto-chg diminish pkg-info epl packed f s avy popup flyspell-correct-ivy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck auto-dictionary org-projectile org-present org org-pomodoro alert log4e gntp org-download htmlize gnuplot mmm-mode markdown-toc markdown-mode gh-md xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help spinner hydra anzu iedit smartparens undo-tree projectile dash package-build yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic wgrep smex ivy-hydra counsel-projectile counsel swiper ivy helm-company helm-c-yasnippet company-web web-completion-data company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode spaceline open-junk-file neotree link-hint indent-guide google-translate eyebrowse evil-mc ace-link bind-map highlight helm helm-core bind-key ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme restart-emacs request rainbow-delimiters quelpa powerline popwin persp-mode pcre2el paradox org-plus-contrib org-bullets move-text macrostep lorem-ipsum linum-relative info+ ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag golden-ratio flx-ido fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile async aggressive-indent adaptive-wrap ace-window ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
