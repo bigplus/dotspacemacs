@@ -1,4 +1,4 @@
-;;; packages.el --- dzy-personal-config layer packages file for Spacemacs.
+;;; packages.el --- dzy-py-x layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,21 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `dzy-personal-config-packages'. Then, for each package PACKAGE:
+;; added to `dzy-py-x-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `dzy-personal-config/init-PACKAGE' to load and initialize the package.
+;;   function `dzy-py-x/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `dzy-personal-config/pre-init-PACKAGE' and/or
-;;   `dzy-personal-config/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `dzy-py-x/pre-init-PACKAGE' and/or
+;;   `dzy-py-x/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst dzy-personal-config-packages
-  '(col-highlight)
-  "The list of Lisp packages required by the dzy-personal-config layer.
+(defconst dzy-py-x-packages
+  '(elpy
+    jedi-direx)
+  "The list of Lisp packages required by the dzy-py-x layer.
 
 Each entry is either:
 
@@ -58,11 +59,35 @@ Each entry is either:
       - A list beginning with the symbol `recipe' is a melpa
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
-(defun dzy-personal-config/init-col-highlight ()
-  (use-package col-highlight
-    :defer t
-    :init)
-  (global-set-key (kbd "C-|") 'column-highlight-mode)
+
+(defun dzy-py-x/init-elpy ()
+  (use-package elpy
+    :diminish elpy-mode
+    :config
+    ;; -------------------------START : https://github.com/TheBB/elpy-layer---------------------------------------
+    ;; Elpy removes the modeline lighters. Let's override this
+    (defun elpy-modules-remove-modeline-lighter (mode-name))
+    (setq elpy-modules '(elpy-module-sane-defaults
+                         elpy-module-eldoc
+                         elpy-module-pyvenv))
+
+    (when (configuration-layer/layer-usedp 'auto-completion)
+      (add-to-list 'elpy-modules 'elpy-module-company)
+      (add-to-list 'elpy-modules 'elpy-module-yasnippet))
+
+    ;; -------------------------STOP : https://github.com/TheBB/elpy-layer---------------------------------------
+
+    (progn
+      (elpy-enable)))
+  )
+
+(defun dzy-py-x/init-jedi-direx ()
+  (use-package jedi-direx
+    :config
+    (progn
+      (eval-after-load "python"
+        '(define-key python-mode-map "\C-cx" 'jedi-direx:pop-to-buffer))
+      (add-hook 'jedi-mode-hook 'jedi-direx:setup)))
   )
 
 ;;; packages.el ends here

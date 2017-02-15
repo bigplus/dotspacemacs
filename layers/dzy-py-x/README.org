@@ -1,0 +1,55 @@
+#+TITLE: dzy-py-x layer
+
+# The maximum height of the logo should be 200 pixels.
+[[img/dzy-py-x.png]]
+
+# TOC links should be GitHub style anchors.
+* Table of Contents                                        :TOC_4_gh:noexport:
+ - [[#description][Description]]
+ - [[#install][Install]]
+ - [[#key-bindings][Key bindings]]
+ - [[#todo][TODO]]
+
+* Description
+  This layer does wonderful things:
+  - tree style source code viewer
+  https://github.com/syohex/emacs-go-direx
+  - elpy
+  https://github.com/TheBB/elpy-layer
+
+* Install
+  To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+  add =dzy-py-x= to the existing =dotspacemacs-configuration-layers= list in this
+  file.
+
+* Key bindings
+
+  | Key Binding | Description    |
+  |-------------+----------------|
+  | ~SPC x x x~ | Does thing01   |
+  # Use GitHub URLs if you wish to link a Spacemacs documentation file or its heading.
+  # Examples:
+  # [[https://github.com/syl20bnr/spacemacs/blob/master/doc/VIMUSERS.org#sessions]]
+  # [[https://github.com/syl20bnr/spacemacs/blob/master/layers/%2Bfun/emoji/README.org][Link to Emoji layer README.org]]
+  # If space-doc-mode is enabled, Spacemacs will open a local copy of the linked file.
+
+* TODO
+http://www.jb51.net/article/75191.htm
+http://pedrokroger.net/configuring-emacs-python-ide/
+http://codingpy.com/article/emacs-the-best-python-editor/
+http://cnlox.is-programmer.com/posts/35867.html
+http://www.janteichmann.me/downloads/project/2015/02/06/emacsPythonIDE/
+https://github.com/gabrielelanaro/emacs-for-python
+emacs IDLE
+https://docs.python.org/2/library/idle.html
+
+https://www.emacswiki.org/emacs/EasyCodeOutline
+http://stackoverflow.com/questions/6180272/emacs-for-python-programming-module-class-outline-browser
+https://github.com/syl20bnr/spacemacs/issues/4983
+github : direx
+参考其他的 direx 资料
+https://github.com/jorgenschaefer/elpy/issues/489
+google : emacs python class outline
+google : emacs tree source code (viewer) 
+
+direx buffer 点击进入
