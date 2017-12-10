@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
-# name: dzy-title
-# key: dt
+# name: org-title
+# key: title
 # --
-#+TITLE:$0
+#+TITLE: $0
 #+AUTHOR: Jerry
+#+OPTIONS: \n:t
